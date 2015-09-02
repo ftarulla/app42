@@ -1,14 +1,23 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.ftarulla.myapplication42.TaskFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task_title_label"
+        android:textColor="@android:color/background_light"
+        style="?android:listSeparatorTextViewStyle" />
+
     <EditText
         android:id="@+id/task_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_light"
         android:hint="@string/task_title_hint" />
 
 </LinearLayout>

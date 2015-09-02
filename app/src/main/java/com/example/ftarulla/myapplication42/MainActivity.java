@@ -1,5 +1,8 @@
 package com.example.ftarulla.myapplication42;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-public class MainActivity extends android.app.Activity {
+public class MainActivity extends Activity {
 
     public static final String EXTRA_MESSAGE = "com.example.ftarulla.myapplication42.MESSAGE";
 
@@ -15,6 +18,17 @@ public class MainActivity extends android.app.Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FragmentManager fm = this.getFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.activityMain);
+
+        if (fragment == null) {
+            fragment = TaskFragment.newInstance();
+            fm.beginTransaction()
+                    .add(R.id.activityMain, fragment)
+                    .commit();
+        }
+
     }
 
     @Override
@@ -54,8 +68,9 @@ public class MainActivity extends android.app.Activity {
 
 
     public void sendMessage(View view) {
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
+//        EditText editText = (EditText) findViewById(R.id.edit_message);
+//        String message = editText.getText().toString();
+        String message = "blablabla";
 
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         intent.putExtra(EXTRA_MESSAGE, message);
