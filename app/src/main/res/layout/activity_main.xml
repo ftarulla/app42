@@ -6,6 +6,7 @@
     android:paddingTop="?android:attr/actionBarSize"
     android:background="@drawable/background_no_stretch">
     <!--android:background="@drawable/background_img"-->
+    <!--android:gravity="center_vertical|center_horizontal"-->
 
     <EditText
         android:id="@+id/edit_message"
