@@ -9,6 +9,22 @@
         <!-- Customize your theme here. -->
         <item name="android:windowActionBarOverlay">true</item>
 
+        <!-- -->
+        <item name="android:listSeparatorTextViewStyle">
+            @style/MyOwnListSeparatorTextViewStyle
+        </item>
+
+
+    </style>
+
+    <style name="MyOwnListSeparatorTextViewStyle">
+        <item name="android:drawableBottom">@drawable/bottom_separator</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/emphasis</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>
