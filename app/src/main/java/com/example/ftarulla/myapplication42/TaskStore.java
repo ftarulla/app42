@@ -47,7 +47,7 @@ public class TaskStore {
 
     private void addTestingTasks() {
         for (int i=0; i < 100; i++) {
-            Task task = new Task("Task number " + i);
+            Task task = new Task("Task #" + i);
             task.setDone(i % 2 == 0);
             this.addTask(task);
         }
