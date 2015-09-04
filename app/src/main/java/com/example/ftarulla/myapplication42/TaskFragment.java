@@ -1,7 +1,5 @@
 package com.example.ftarulla.myapplication42;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.text.Editable;
@@ -9,7 +7,15 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import android.text.format.DateFormat;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,11 +48,19 @@ public class TaskFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-//        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_task, container, false);
 
-        EditText editText = (EditText) view.findViewById(R.id.task_title);
-        editText.addTextChangedListener(new TextWatcher() {
+        // Wire the model to the view
+        this.wireTitle(view);
+        this.wireDate(view);
+        this.wireCheckBox(view);
+        return view;
+    }
+
+    private void wireTitle(View view) {
+        EditText titleText = (EditText) view.findViewById(R.id.task_title);
+        titleText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // nothing here to do
@@ -62,8 +76,29 @@ public class TaskFragment extends Fragment {
                 // nothing here to do
             }
         });
+    }
 
-        return view;
+    private void wireDate(View view) {
+        Button dateButton = (Button) view.findViewById(R.id.task_date);
+
+        // INPOT: Noooo, está teniendo en cuenta que el date del task cuando
+        // es creado es "today". Está mal esta linea en el libro!!
+        // dateButton.setText(this.task.getDate().toString());
+        dateButton.setText(new SimpleDateFormat("MMM dd, yyyy hh:mm a")
+                .format(new Date()));
+
+        // TODO:
+        dateButton.setEnabled(false);
+    }
+
+    private void wireCheckBox(View view) {
+        CheckBox doneCheckBox = (CheckBox) view.findViewById(R.id.task_solved);
+        doneCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                task.setDone(isChecked);
+            }
+        });
     }
 
 }

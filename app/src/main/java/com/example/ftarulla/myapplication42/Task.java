@@ -12,14 +12,14 @@ public class Task {
 
     private String title;
     private Date date;
-    private boolean closed;
+    private boolean done;
 
     public Task(String title) {
         this.id = UUID.randomUUID();
 
         this.title = title;
         this.date = new Date();
-        this.closed = false;
+        this.done = false;
     }
 
     public UUID getId() {
@@ -42,11 +42,11 @@ public class Task {
         this.date = date;
     }
 
-    public boolean isClosed() {
-        return closed;
+    public boolean isDone() {
+        return done;
     }
 
-    public void setClosed(boolean closed) {
-        this.closed = closed;
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }

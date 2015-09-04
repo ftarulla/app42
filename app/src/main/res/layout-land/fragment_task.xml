@@ -25,20 +25,26 @@
         android:text="@string/task_details_label"
         style="?android:listSeparatorTextViewStyle" />
 
-    <Button
-        android:id="@+id/task_date"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp">
 
-    <CheckBox
-        android:id="@+id/task_solved"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/task_solved_label"
-        android:textColor="@android:color/primary_text_dark"/>
+        <Button
+            android:id="@+id/task_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/task_solved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/task_solved_label"
+            android:textColor="@android:color/primary_text_dark"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>
