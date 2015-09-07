@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.ftarulla.myapplication42.dummy.DummyContent;
 
+import java.util.ArrayList;
+
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -73,9 +75,11 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
 //            mParam2 = getArguments().getString(ARG_PARAM2);
 //        }
 
+        ArrayList<Task> tasks = TaskStore.getInstance(getActivity()).getTasks();
+
         // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
+        mAdapter = new ArrayAdapter<Task>(getActivity(),
+                android.R.layout.simple_list_item_1, android.R.id.text1, tasks);
     }
 
     @Override

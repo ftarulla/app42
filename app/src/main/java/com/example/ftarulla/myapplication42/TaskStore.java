@@ -45,6 +45,10 @@ public class TaskStore {
         this.tasks.add(task);
     }
 
+    public ArrayList<Task> getTasks() {
+        return this.tasks;
+    }
+
     private void addTestingTasks() {
         for (int i=0; i < 100; i++) {
             Task task = new Task("Task #" + i);
