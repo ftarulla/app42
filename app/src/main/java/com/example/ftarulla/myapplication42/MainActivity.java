@@ -9,25 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SingleFragmentActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.ftarulla.myapplication42.MESSAGE";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment);
-
-        FragmentManager fm = this.getFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.activitySingleFragment);
-
-        if (fragment == null) {
-            fragment = TaskFragment.newInstance();
-            fm.beginTransaction()
-                    .add(R.id.activitySingleFragment, fragment)
-                    .commit();
-        }
-
+    protected Fragment createFragment() {
+        return TaskFragment.newInstance();
     }
 
     @Override
