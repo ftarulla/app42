@@ -1,8 +1,9 @@
 package com.example.ftarulla.myapplication42;
 
-import android.app.Activity;
+//import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.example.ftarulla.myapplication42.dummy.DummyContent;
+//import com.example.ftarulla.myapplication42.dummy.DummyContent;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,9 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
 //    private String mParam1;
 //    private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+//    private OnFragmentInteractionListener mListener;
+
+    private static final String TAG = "TaskListFragment";
 
     /**
      * The fragment's ListView/GridView.
@@ -78,8 +81,10 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
         ArrayList<Task> tasks = TaskStore.getInstance(getActivity()).getTasks();
 
         // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<Task>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, tasks);
+        mAdapter = new ArrayAdapter<Task>(getActivity(), // context
+                android.R.layout.simple_list_item_1, // layout used to create view object
+                android.R.id.text1, // The id of the TextView within the layout resource to be populated
+                tasks); // items
     }
 
     @Override
@@ -116,11 +121,15 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (null != mListener) {
-            // Notify the active callbacks interface (the activity, if the
-            // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
-        }
+//        if (null != mListener) {
+//            // Notify the active callbacks interface (the activity, if the
+//            // fragment is attached to one) that an item has been selected.
+//            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+//        }
+
+        Task task = (Task)mAdapter.getItem(position);
+        Log.d(TAG, task.getTitle() + " was clicked!");
+
     }
 
     /**
