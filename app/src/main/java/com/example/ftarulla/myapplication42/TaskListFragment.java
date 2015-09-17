@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -81,10 +82,7 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
         ArrayList<Task> tasks = TaskStore.getInstance(getActivity()).getTasks();
 
         // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<Task>(getActivity(), // context
-                android.R.layout.simple_list_item_1, // layout used to create view object
-                android.R.id.text1, // The id of the TextView within the layout resource to be populated
-                tasks); // items
+        mAdapter = new TaskAdapter(tasks);
     }
 
     @Override
@@ -160,4 +158,39 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
         public void onFragmentInteraction(String id);
     }
 
+    private class TaskAdapter extends ArrayAdapter<Task> {
+
+        public TaskAdapter(ArrayList<Task> tasks) {
+            super(getActivity(), // context
+                  android.R.layout.simple_list_item_1, // layout used to create view object
+                  android.R.id.text1, // The id of the TextView within the layout resource to be populated
+                  tasks); // items
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = getActivity().getLayoutInflater()
+                        .inflate(R.layout.list_item_task, null);
+            }
+
+            // the model...
+            Task task = this.getItem(position);
+
+            // the view...
+            TextView titleTextView =
+                    (TextView) convertView.findViewById(R.id.task_list_item_titleTextView);
+            titleTextView.setText(task.getTitle());
+            //
+            TextView dateTextView =
+                    (TextView) convertView.findViewById(R.id.task_list_item_dateTextView);
+            dateTextView.setText(task.getDate().toString());
+            //
+            CheckBox doneCheckBox =
+                    (CheckBox) convertView.findViewById(R.id.task_list_item_doneCheckBox);
+            doneCheckBox.setChecked(task.isDone());
+
+            return convertView;
+        }
+    }
 }
