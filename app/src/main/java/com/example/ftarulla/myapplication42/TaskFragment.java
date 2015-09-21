@@ -16,6 +16,7 @@ import android.text.format.DateFormat;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +27,9 @@ import java.util.Date;
  * create an instance of this fragment.
  */
 public class TaskFragment extends Fragment {
+
+    public static final String EXTRA_TASK_ID =
+            "com.example.ftarulla.myapplication42.task_id";
 
     private Task task = null;
 
@@ -41,7 +45,13 @@ public class TaskFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.task = new Task("Not null but I need a title.");
+
+        UUID taskId = (UUID)this.getActivity().getIntent()
+                .getSerializableExtra(this.EXTRA_TASK_ID);
+
+        //this.task = new Task("Not null but I need a title.");
+        this.task = TaskStore.getInstance(getActivity()).getTask(taskId);
+
     }
 
     @Override
@@ -60,6 +70,9 @@ public class TaskFragment extends Fragment {
 
     private void wireTitle(View view) {
         EditText titleText = (EditText) view.findViewById(R.id.task_title);
+        //
+        titleText.setText(this.task.getTitle());
+
         titleText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -80,12 +93,9 @@ public class TaskFragment extends Fragment {
 
     private void wireDate(View view) {
         Button dateButton = (Button) view.findViewById(R.id.task_date);
-
-        // INPOT: Noooo, está teniendo en cuenta que el date del task cuando
-        // es creado es "today". Está mal esta linea en el libro!!
-        // dateButton.setText(this.task.getDate().toString());
+        //
         dateButton.setText(new SimpleDateFormat("MMM dd, yyyy hh:mm a")
-                .format(new Date()));
+                .format(this.task.getDate()));
 
         // TODO:
         dateButton.setEnabled(false);
@@ -93,6 +103,9 @@ public class TaskFragment extends Fragment {
 
     private void wireCheckBox(View view) {
         CheckBox doneCheckBox = (CheckBox) view.findViewById(R.id.task_solved);
+        //
+        doneCheckBox.setChecked(this.task.isDone());
+
         doneCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

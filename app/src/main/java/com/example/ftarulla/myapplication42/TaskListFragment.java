@@ -130,7 +130,10 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
         Log.d(TAG, task.getTitle() + " was clicked!");
 
         // show the details
-        this.startActivity(new Intent(this.getActivity(), TaskActivity.class));
+        Intent intent = new Intent(this.getActivity(), TaskActivity.class);
+        intent.putExtra(TaskFragment.EXTRA_TASK_ID, task.getId());
+
+        this.startActivity(intent);
 
     }
 
