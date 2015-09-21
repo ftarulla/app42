@@ -10,9 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f993fc5b-2c49-403e-bc7b-47972bbe609a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskListFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app42.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="TaskListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48795182">
-              <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.22439758">
+              <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,11 +49,8 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding>
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-              </folding>
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,10 +59,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
-                <element signature="e#3294#3516#0" expanded="true" />
-                <element signature="e#3515#3516#0" expanded="true" />
+                <element signature="e#3335#3557#0" expanded="true" />
+                <element signature="e#3556#3557#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1520,10 +1517,10 @@
         <option value="$PROJECT_DIR$/debug.sh" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_task.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskStore.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskListFragment.java" />
       </list>
     </option>
   </component>
@@ -2441,32 +2438,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#3335#3557#0" expanded="true" />
+            <element signature="e#3556#3557#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="58" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
-          <folding>
-            <element signature="e#3294#3516#0" expanded="true" />
-            <element signature="e#3515#3516#0" expanded="true" />
-          </folding>
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ftarulla/myapplication42/TaskListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48795182">
-          <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.22439758">
+          <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -9,13 +9,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.UUID;
+
 public class TaskActivity extends SingleFragmentActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.ftarulla.myapplication42.MESSAGE";
 
     @Override
     protected Fragment createFragment() {
-        return TaskFragment.newInstance();
+        UUID taskId = (UUID)this.getIntent()
+                .getSerializableExtra(TaskFragment.EXTRA_TASK_ID);
+
+        return TaskFragment.newInstance(taskId);
     }
 
     @Override

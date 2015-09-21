@@ -33,8 +33,13 @@ public class TaskFragment extends Fragment {
 
     private Task task = null;
 
-    public static TaskFragment newInstance() {
+    public static TaskFragment newInstance(UUID taskId) {
+        Bundle args = new Bundle();
+        args.putSerializable(EXTRA_TASK_ID, taskId);
+
         TaskFragment fragment = new TaskFragment();
+        fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -46,10 +51,7 @@ public class TaskFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        UUID taskId = (UUID)this.getActivity().getIntent()
-                .getSerializableExtra(this.EXTRA_TASK_ID);
-
-        //this.task = new Task("Not null but I need a title.");
+        UUID taskId = (UUID)this.getArguments().getSerializable(this.EXTRA_TASK_ID);
         this.task = TaskStore.getInstance(getActivity()).getTask(taskId);
 
     }

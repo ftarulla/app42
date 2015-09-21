@@ -101,7 +101,15 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
         return view;
     }
 
-//    @Override
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // refresh list
+        ((TaskAdapter)this.mAdapter).notifyDataSetChanged();
+    }
+
+    //    @Override
 //    public void onAttach(Activity activity) {
 //        super.onAttach(activity);
 //        try {
