@@ -6,7 +6,7 @@ build() {
 }
 
 deploy() {
-   adb shell am start -n com.example.ftarulla.myapplication42/com.example.ftarulla.myapplication42.MainActivity
+   adb shell am start -n com.example.ftarulla.myapplication42/com.example.ftarulla.myapplication42.TaskActivity
 }
 
 

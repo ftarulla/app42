@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends SingleFragmentActivity {
+public class TaskActivity extends SingleFragmentActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.ftarulla.myapplication42.MESSAGE";
 

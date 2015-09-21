@@ -1,6 +1,7 @@
 package com.example.ftarulla.myapplication42;
 
 //import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -127,6 +128,9 @@ public class TaskListFragment extends Fragment implements AbsListView.OnItemClic
 
         Task task = (Task)mAdapter.getItem(position);
         Log.d(TAG, task.getTitle() + " was clicked!");
+
+        // show the details
+        this.startActivity(new Intent(this.getActivity(), TaskActivity.class));
 
     }
 
