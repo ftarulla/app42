@@ -2,6 +2,7 @@ package com.example.ftarulla.myapplication42;
 
 import android.content.Context;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -45,7 +46,27 @@ public class TaskStore {
         this.tasks.add(task);
     }
 
-    public ArrayList<Task> getTasks() {
+    public Task getAt(int position) {
+        return this.tasks.get(position);
+    }
+
+//    public ArrayList<Task> getTasks() {
+//        return this.tasks;
+//    }
+
+    public int getPosition(UUID taskId) {
+        int i = 0;
+        for (i = 0; i < this.tasks.size() &&
+                    !(this.tasks.get(i).getId().equals(taskId)); i++);
+
+        return i;
+    }
+
+    public int size() {
+        return this.tasks.size();
+    }
+
+    public ArrayList<Task> toArray() {
         return this.tasks;
     }
 
@@ -56,5 +77,4 @@ public class TaskStore {
             this.addTask(task);
         }
     }
-
 }

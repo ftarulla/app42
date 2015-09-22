@@ -1,10 +1,7 @@
 package com.example.ftarulla.myapplication42;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import android.support.v4.app.Fragment;
 
 public class TaskListActivity extends SingleFragmentActivity {
 

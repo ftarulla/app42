@@ -1,7 +1,8 @@
 package com.example.ftarulla.myapplication42;
 
+
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,11 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-
-import android.text.format.DateFormat;
-
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.UUID;
 
 /**

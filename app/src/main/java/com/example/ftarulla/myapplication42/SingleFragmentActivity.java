@@ -1,14 +1,14 @@
 package com.example.ftarulla.myapplication42;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 
 /**
  * Created by ftarulla on 07/09/15.
  */
-public abstract class SingleFragmentActivity extends Activity {
+public abstract class SingleFragmentActivity extends FragmentActivity {
 
     // to implement in subclasses
     protected abstract Fragment createFragment();
@@ -18,7 +18,7 @@ public abstract class SingleFragmentActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
 
-        FragmentManager fm = this.getFragmentManager();
+        FragmentManager fm = this.getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.activitySingleFragment);
 
         if (fragment == null) {
