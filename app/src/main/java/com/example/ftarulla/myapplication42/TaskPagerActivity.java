@@ -15,7 +15,7 @@ public class TaskPagerActivity extends FragmentActivity {
     private TaskStore mTasks;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // create viewPager
@@ -48,6 +48,7 @@ public class TaskPagerActivity extends FragmentActivity {
                 .getSerializableExtra(TaskFragment.EXTRA_TASK_ID);
         int position = mTasks.getPosition(taskId);
         this.mViewPager.setCurrentItem(position);
+        
     }
 
 }
